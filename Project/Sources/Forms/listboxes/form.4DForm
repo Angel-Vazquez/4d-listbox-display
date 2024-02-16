@@ -1,0 +1,132 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onSelectionChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"lbTopLevel": {
+					"type": "listbox",
+					"left": 34,
+					"top": 64,
+					"width": 498,
+					"height": 408,
+					"events": [],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.lbTopLevel",
+					"currentItemSource": "Form:C1466.currentItemTopLevel",
+					"selectionMode": "single",
+					"columns": [
+						{
+							"header": {
+								"text": "ID",
+								"name": "headTopLevelID"
+							},
+							"name": "colTopLevelID",
+							"footer": {
+								"name": "Footer1"
+							},
+							"dataSource": "This:C1470.ID"
+						},
+						{
+							"header": {
+								"name": "headTopLevelName",
+								"text": "Name"
+							},
+							"name": "colTopLevelName",
+							"footer": {
+								"name": "Footer3"
+							},
+							"dataSource": "This:C1470.name"
+						},
+						{
+							"header": {
+								"name": "headTopLevelMidLevelPID",
+								"text": "MidLevelPID"
+							},
+							"name": "colTopLevelMidLevelPID",
+							"footer": {
+								"name": "Footer4"
+							},
+							"dataSource": "This:C1470.midlevelpid"
+						}
+					]
+				},
+				"lbMidLevel": {
+					"type": "listbox",
+					"left": 659,
+					"top": 72,
+					"width": 673,
+					"height": 408,
+					"events": [],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.currentItemTopLevel.Link_4_return",
+					"currentItemSource": "Form:C1466.currentItemMidLevel",
+					"selectionMode": "single",
+					"columns": [
+						{
+							"header": {
+								"text": "ID",
+								"name": "headMidLevelID"
+							},
+							"name": "colMidLevelID",
+							"footer": {
+								"name": "Footer2"
+							},
+							"dataSource": "This:C1470.ID"
+						},
+						{
+							"header": {
+								"name": "headMidLevelName",
+								"text": "Name"
+							},
+							"name": "colMidLevelName",
+							"dataSource": "This:C1470.name",
+							"footer": {
+								"name": "Footer5"
+							}
+						},
+						{
+							"header": {
+								"name": "headMidLevelObservations",
+								"text": "Observations"
+							},
+							"name": "colMidLevelObservations",
+							"dataSource": "JSON Stringify:C1217(This:C1470.observations)",
+							"footer": {
+								"name": "Footer6"
+							}
+						}
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 21,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

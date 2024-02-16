@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="list-boxes" uuid="55CCD2172FCB474684C4504A690F14A2" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="TopLevel" uuid="44FB84F0ED2D4C688AA5478E9E7E1AAD" id="1">
+		<field name="ID" uuid="6005C17FDFE54FE497E555A84237D42C" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="46B8C788057B4EDDBC5C15ADBB9F1CE9" type="10" limiting_length="255" id="2"/>
+		<field name="midlevelpid" uuid="C4FFD80AF01E4B6DBAE9EF5B47BA90E1" type="4" id="3"/>
+		<primary_key field_name="ID" field_uuid="6005C17FDFE54FE497E555A84237D42C"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="40" top="40" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="MidLevel" uuid="FD20E9C029E24F6DBB92C33E28400DA6" id="2">
+		<field name="ID" uuid="AE542C63A03946DFB94D12AD4941972C" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="BD1D653783C94B7FA8235637D6642FA3" type="10" limiting_length="255" id="2"/>
+		<field name="observations" uuid="65FA79FD7EB04584AF6D000170335170" type="21" blob_switch_size="2147483647" id="3"/>
+		<primary_key field_name="ID" field_uuid="AE542C63A03946DFB94D12AD4941972C"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="258.57592773438" top="76.189880371094" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="59DA9E59556C43C5B2F72A35E5E86927" name_Nto1="Link_4" name_1toN="Link_4_return" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="AE542C63A03946DFB94D12AD4941972C" name="ID">
+				<table_ref uuid="FD20E9C029E24F6DBB92C33E28400DA6" name="MidLevel"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="C4FFD80AF01E4B6DBAE9EF5B47BA90E1" name="midlevelpid">
+				<table_ref uuid="44FB84F0ED2D4C688AA5478E9E7E1AAD" name="TopLevel"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="0" via_point_y="0" prefers_left="true" smartlink="true">
+				<color red="30" green="30" blue="30" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="64DA485CFD994B00ADBADF07BB4F9A53" type="7">
+		<field_ref uuid="AE542C63A03946DFB94D12AD4941972C" name="ID">
+			<table_ref uuid="FD20E9C029E24F6DBB92C33E28400DA6" name="MidLevel"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="BFFB27BD6BA24E3B8E3414F4E25E809B" type="7">
+		<field_ref uuid="C4FFD80AF01E4B6DBAE9EF5B47BA90E1" name="midlevelpid">
+			<table_ref uuid="44FB84F0ED2D4C688AA5478E9E7E1AAD" name="TopLevel"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="EC1F0FAF91BE4DE289367088A35E836C" type="7">
+		<field_ref uuid="6005C17FDFE54FE497E555A84237D42C" name="ID">
+			<table_ref uuid="44FB84F0ED2D4C688AA5478E9E7E1AAD" name="TopLevel"/>
+		</field_ref>
+	</index>
+</base>
